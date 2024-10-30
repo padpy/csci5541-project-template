@@ -1,0 +1,8 @@
+The file pdfscrape.py tokenizes a given pdf file. It is currently hardcoded to work for the pdf file "armyofthedamned", which is a DnD campaign book. To adjust for other campaign books, the filename and pages for different sections would need to be changed. One can also change the tokenization method - it is currently set for distilbert.
+
+The main outputs of the program are section_text, which is a 1-dimensional list of raw text for each of the sections, and secion_tokens, which is a 1-dimensional list of raw text for each of the sections.
+
+This method will be used to finetune our model on this campaign book, making the llm specific to DnD campaigns.
+
+Written by Jack LeGeault
+Updated on 10/30/2024
