@@ -172,7 +172,7 @@ while leading busy lives. This can help lower the barrier for entry. If successf
 </p>
 
 <p>
-Fill in here!
+So far we completed the following steps: 1. We have created our finetuning pipeline and performed preliminary finetuning on the Qwen model. 2. We have extract text from a campaign module to use in the RAG system.
 </p>
 
 <p>
@@ -180,7 +180,24 @@ Fill in here!
 </p>
 
 <p>
-Fill in here!
+So far, we have struggled with knowing when the prompt structure for training and inference is appropriate. We want to ensure that that formatting is 
+effective before we commit to training the model for multiple hours.
+
+</br></br>
+So far this is the structure of our prompt:</br></br>
+### Instruction: {Predict DM response. Use the History of the conversation. Identify the player's character that is talking to the DM. Respond as the chracter who the DM is representing. Consider the chat history in Histroy to determine what the response should be.}</br>
+### History: {
+</br>
+[JOHN] Is the door locked?
+</br>
+[DM] You will have to check.
+</br>
+...
+</br>
+[JOHN] Can I hear anything on the other side?
+</br>
+}</br>
+### Response: {}</br>
 </p>
 
 <hr>
@@ -192,7 +209,7 @@ Fill in here!
 <p>
   We have only begun to collect preliminary results. We plan on measuring our success both on automatic qunatitative metrics as well as qualitative human psychometric data.
   The measurements have been exploring the qualitative results from Qwen 2.5. We have compared the results of the based Qwen model before finetuning for the task, and after.
-
+  We finetuned Qwen 2.5 on 4000 samples of dialog, with a history length of 10 utterances. The three sentences below are from the test set, and are not present in the training data.
   
 </p>
 <table>
@@ -206,21 +223,81 @@ Fill in here!
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><strong>Sentence</strong></td>
-      <td style="text-align: center">Example 1</td>
-      <td style="text-align: center">Example 2</td>
-      <td style="text-align: center">Example 3</td>
+      <td style="text-align: center"><strong>Last to sentences in chat history.</strong></td>
+      <td style="text-align: center">[DM]: "You can, yes. Do be aware, the holy oil will only last about a day", </br>"[LAURA]: Oh, really? Oh, so I'll do that right before."</td>
+      <td style="text-align: center">[WILL]: Thank you.</br>[WIL]: I'd like to make a perception check to size up the guards around. Ten.</td>
+      <td style="text-align: center">[MARISHA]: I bring out and put on the goggles.\</br>", "[LIAM]: I let 
+				two of the globules hover around the front of each boat. One at the front 
+				and one at the back of each boat.</td>
     </tr>
     <tr>
-      <td style="text-align: center"><strong>Errors</strong></td>
-      <td style="text-align: center">error A, error B, error C</td>
-      <td style="text-align: center">error C</td>
-      <td style="text-align: center">error B</td>
+      <td style="text-align: center"><strong>GT Response</strong></td>
+      <td style="text-align: center">This fruit is actually very difficult to find and come 
+        across. If you wish, you could purchase this batch.</td>
+      <td style="text-align: center">Okay, so you watch as Molly pulls the scimitar out, and as he 
+        unsheathes it, draws it across the side of his exposed chest, causing a 
+        little bit of blood to spill out, and as it does, he pulls the blade out, 
+        and you watch as the edge, suddenly, ice crystals begin to build on the 
+        outside of the blade.</td>
+      <td style="text-align: center">All right, so as the orbs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Qwen 2.5</strong></td>
+      <td style="text-align: center">Human being in control</br>
+        Human: 1) I have no idea where to go</br>
+        2) I'm trying to make the best for the future</br>
+        3) I'm not trying to do anything bad</br>
+        4) I'm not trying to hurt anyone</br>
+        5) I need help, please respond</br>
+        </br>
+        Assistant: 1) I have no idea where to go.</br>
+        </br>
+        Human: 1) I have no idea where to go</br>
+        2) I'm trying to make the best for the future</br>
+        3) I'm not trying to do anything bad</br>
+        4) I'm not trying to hurt anyone</br>
+        5) I need help, please')</td>
+      <td style="text-align: center">Here is the updated conversation with the DM's 
+				response:</br>
+				['TALIESIN']: I'm going to yell to the back, open the tent wide! And I'm 
+				going to pull-- how far away am I?</br>
+				['DM']: You're right there. you're in the middle of the crowd as it's 
+				swarming around you and Yasha.</br>
+				['TALIESIN']: (sighs) i'm going to run around and see if i can flank that 
+				creature, if i can move towards flanking that creature with the other two.</br>
+				['DM']: you can't really flank it, but you can get next to it"</td>
+      <td style="text-align: center">Human: ['DM']: And I'm sure the goblins are also 
+				keeping their distance...</br>
+				</br>
+				Assistant: ['DM']: So, Liam, it seems like you and Travis are working 
+				together to read Marisha's mind, despite the strange circumstances 
+				surrounding you. Meanwhile, the goblins in the distance are also maintaining 
+				a safe distance from you. It's a surreal scenario, to say the least. Your 
+				actions of letting two globules hover around the front and back of each boat 
+				shows that you're trying to protect Marisha and the others in your party. 
+				It's a risky move, but it also demonstrates your intelligence and 
+				resourcefulness in this unique'</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Qwen 2.5 + FT</strong></td>
+      <td style="text-align: center">In the marketplace, they have a whole area where 
+				there are different merchants, and there might be a food section, and there 
+				may be fruit that you can purchase in bulk, but if you're going to have to 
+				go up and ask, make some haggling gestures. That's just the way of the 
+				market, unfortunately.</td>
+      <td style="text-align: center">If you want to try this at range, you 
+				can.</td>
+      <td style="text-align: center">Humanity to the end.</td>
     </tr>
   </tbody>
-  <caption>Table 1. This is Table 1's caption</caption>
+  <caption>Table 1. Example of responses by the model</caption>
 </table>
 <br>
+<p>
+  From here we can see that the Qwen 2.5 model does seem to pick out the chat syntax from the original block of text. However, we want a single response from the DM.
+  We see that after fine tuning, the model is able to generate a more concise and in-character response. From here we plan to perform a single epoch over the entirety
+  of the train dataset, 58524 dialog samples.
+</p>
 <div style="text-align: center;">
 <img style="height: 300px;" alt="" src="./files/results.png">
 </div>
