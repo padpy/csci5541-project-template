@@ -1,3 +1,4 @@
-# csci5541-project-template
+# Lairs and Language Models: Tabletop Gaming Narrative Assistant
+CSCI 5541 Final Project
 
-This is a template webpage for CSCI 5541 NLP class.
+Created by Nicholas Padilla, Jacob Cadevez, and Jack LeGeault
