@@ -106,14 +106,6 @@
     </div>
   </div>
 
-
-
-
-
-  
-  
-
-
   <div class="wrapper">
     <hr>
     
@@ -123,16 +115,23 @@
 
 <hr>
 
-<h2 id="teaser">Teaser Figure</h2>
+<h2 id="teaser">Application Diagram</h2>
 
-<p>We are designing a chat System named Volo. The main goal of the system is combine player chat history with story documents to create a cohesive role playing experince</p>
+<p>We are designing a chat System named Volo. The main goal of the system is combine player chat history with story documents to create a cohesive role playing experince.
+  The system will use a finetuned LLM, Qwen 2.5, to generate responses to player prompts. We are using a combination of real-world and synthetic role playing data to train the model.
+  We are also using the RAG system to retrieve information from campaign modules to help guide the narrative.
+</p>
 
 <p class="sys-img"><img src="./files/diagram.png" alt="imgname"></p>
 
 
 <h3 id="the-timeline-and-the-highlights">Additional headers</h3>
 
-<p>If you need to explain more about your figure</p>
+<p>
+  The figure above visualizes the general architectural approach of our application. The "DM context" allows human users to add constraints to the retrival of documents
+  from the database with RAG. This helps the model retrieve the most relevant information for the current game session. The campaign database is manually created by our
+  team from existing game play documents such as Dungeons and Dragons campaign modules.
+</p>
 
 <hr>
 
@@ -175,7 +174,20 @@ while leading busy lives. This can help lower the barrier for entry. If successf
 </p>
 
 <p>
-So far we completed the following steps: 1. We have created our finetuning pipeline and performed preliminary finetuning on the Qwen model. 2. We have extract text from a campaign module to use in the RAG system.
+  So far we completed the following steps: </br>
+  1. We have created our finetuning pipeline and performed preliminary finetuning on the Qwen model.</br>
+  2. We have extract text from a campaign module to use in the RAG system.
+</p>
+<p>
+  We have had to change our approach slightly, since the outset of the project. Firstly, we have change the dataset used to train the model.
+  We have switch from the FIREBALL dataset (combat focused) to the CRD3 dataset (dialog focused) base on the Dungeon and Dragons podcast,
+  Critical Role. We have processed the CRD3 dataset to extract chunks of dialog from the dataset, and are using the the Dungeon Masters
+  responses as the target for model prediction. Are are also considering including synthetic role play data generated through ChatGPT 4o.
+  Preliminary results have shown ChatGPT 4o to be able to generate dialog that is high quality and human-like.
+</p>
+<p>
+  Additionally, we have decided to use LoRA as our finetuning approach. This has allowed us to finetune much larger models, up to 14B parameters.
+  To do this, we are using the Unsloth framework, which also allows us to use 4 bit quantitization, which has also allowed us to train larger models.
 </p>
 
 <p>
@@ -203,6 +215,13 @@ So far this is the structure of our prompt:</br></br>
 ### Response: {}</br>
 </p>
 
+<p>
+  Additionally, we are still struggling to improve our models response consistency. We are hoping that further finetuning and larger models
+  will help with this. Additionally, we believe that further cleaning of our existing dataset to improve selection or meaningful responses
+  and providing consistent chat history response windows will imrove training quality. The inclusion of synthetic data will help
+  fill in scenario gaps in the CRD3 dataset.
+</p>
+
 <hr>
     
 <h2 id="results">Results</h2>
@@ -212,7 +231,7 @@ So far this is the structure of our prompt:</br></br>
 <p>
   We have only begun to collect preliminary results. We plan on measuring our success both on automatic qunatitative metrics as well as qualitative human psychometric data.
   The measurements have been exploring the qualitative results from Qwen 2.5. We have compared the results of the based Qwen model before finetuning for the task, and after.
-  We finetuned Qwen 2.5 on 4000 samples of dialog, with a history length of 10 utterances. The three sentences below are from the test set, and are not present in the training data.
+  We finetuned Qwen 2.5 on 4000 samples of dialo, with a history length of 10 utterances. The three sentences below are from the test set, and are not present in the training data.
   
 </p>
 <table>
@@ -328,15 +347,65 @@ So far this is the structure of our prompt:</br></br>
   </tbody>
   <caption>Table 1. Example of responses by the model</caption>
 </table>
+
+<p>
+  We can see that the base Qwen model does seem to pick up the chat syntax from the chat history, however, this means that responses 
+  are long sequences of chat history, when we expect a single response from the dungeon masters perscpective. After finetuning, we see
+  that the model more accurately generates a response. The first column also shows the best Qwen + FT results, with the model giving
+  a realistic response to the question regarding finding fruit in the market. However, with the other two responses the model performs
+  much more poorly. This is likely due the small amount of meaningful information in the chat history. We plan to address this by
+  standardising the chat history information by providing a consistent number of tokens in the history. We will do this by approximating
+  the number of tokens based on number of non-white space characters in the chat history, setting a lower bound for token counts, and
+  including chats until this threshold is reached.
+</p>
+
+<p>
+  If we look at Table 2, we see automatic evaluation results from the Qwen 2.5 model, Qwen 2.5 + finetuned on 4000 samples, and 
+  Qwen 2.5 finetuned on 58524 samples. The results are metrics comparing the generate output given 250 randomly selected dialog
+  samples from test. We can see that from the base model to the final model finetuned over the entire dataset, 58524 samples, that 
+  the model begins to use more 2-grams that are in the test set, and the Bert Score increases suggesting that the semantic content
+  is more similar. It is unclear why the Qwen model trained on 4000 samples performs more poorly, but it may have to do with the
+  model learning intermediate representations that is capturing the chat syntax, but not the content. The base Qwen may be
+  "copy" text from the chat history, that may artificially inflate the Rouge scores.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Metrics</strong></th>
+      <th style="text-align: center">Bert Score (F1)</th>
+      <th style="text-align: center">Rouge 1</th>
+      <th style="text-align: center">Rouge 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><strong>Qwen 2.5 7B</strong></td>
+      <td style="text-align: center">0.8393</td>
+      <td style="text-align: center">0.0904</td>
+      <td style="text-align: center">0.0023</td>
+    <tr>
+      <td style="text-align: center"><strong>Qwen 2.5 7B + FT (4000 Samples Trained)</strong></td>
+      <td style="text-align: center">0.8386</td>
+      <td style="text-align: center">0.0211</td>
+      <td style="text-align: center">0.0052</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Qwen 2.5 7B + FT (58524 Samples Trained)</strong></td>
+      <td style="text-align: center">0.8484</td>
+      <td style="text-align: center">0.0950</td>
+      <td style="text-align: center">0.0048</td>
+
+    </tr>
+  </tbody>
+  <caption>Table 2. Automated Evaluation metrics on 250 random samples from the test CRD3 set</caption>
+</table>
 <br>
 <p>
   From here we can see that the Qwen 2.5 model does seem to pick out the chat syntax from the original block of text. However, we want a single response from the DM.
   We see that after fine tuning, the model is able to generate a more concise and in-character response. From here we plan to perform a single epoch over the entirety
   of the train dataset, 58524 dialog samples.
 </p>
-<div style="text-align: center;">
-<img style="height: 300px;" alt="" src="./files/results.png">
-</div>
 <br><br>
 
 <hr>
