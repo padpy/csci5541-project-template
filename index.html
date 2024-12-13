@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
-<html lang=" en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang=" en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NLP Class Project | Fall 2024 CSCI 5541 | University of Minnesota</title>
@@ -14,7 +17,8 @@
   <link href="./files/css" rel="stylesheet">
 
 
-  <base href="." target="_blank"></head>
+  <base href="." target="_blank">
+</head>
 
 
 <body>
@@ -22,84 +26,75 @@
     <div class="wrapper">
       <h1 style="font-family: &#39;Lato&#39;, sans-serif;">VoloLLM: Fully Automatic Dungeon Master for DnD</h1>
       <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">Updated 12/12/2024</h4>
-      <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">Fall 2024 CSCI 5541 NLP: Class Project - University of Minnesota</h4>
+      <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">Fall 2024 CSCI 5541 NLP: Class Project - University of
+        Minnesota</h4>
       <h4 style="font-family: &#39;Lato&#39;, sans-serif; ">Tired Tokenizers</h4>
 
       <div class="authors-wrapper">
-        
+
         <div class="author-container">
           <div class="author-image">
-                        
-              <img src="">
-            
-            
+
+            <img src="files/pfp/71700367-824d-4030-a9c8-2115b8b42e50.png">
+
+
           </div>
           <p>
-                        
-              Nicholas Padilla
-            
+
+            Nicholas Padilla
+
           </p>
         </div>
-        
+
         <div class="author-container">
           <div class="author-image">
-            
-            <img src="">
-            
+
+            <img src="files/pfp/T07JQN8TW59-U07KUPSSNQ5-962dbc7e3cb7-512.jpg">
+
           </div>
           <p>
-            
+
             Jack LeGeault
-            
+
           </p>
         </div>
-        
+
         <div class="author-container">
           <div class="author-image">
-            
-              <img src="">            
-            
+
+            <img src="files/pfp/T07JQN8TW59-U07LLE7CUJC-f8b419c25a89-512.jpg">
+
           </div>
           <p>
-              Jacob Cadavez
+            Jacob Cadavez
           </p>
         </div>
-        
+
       </div>
 
-      <br/>
+      <br />
 
       <div class="authors-wrapper">
         <div class="publication-links">
           <!-- Github link -->
           <span class="link-block">
-            <a
-              href="https://http://volo.gopher-eye.com/"
-              target="_blank"
-              class="external-link button is-normal is-rounded is-dark is-outlined"
-            >
-            <span>Running Model</span>
-            </a>
-          </span>      
-          <span class="link-block">
-            <a
-              href=""
-              target="_blank"
-              class="external-link button is-normal is-rounded is-dark is-outlined"
-            >
-            <span>Final Report</span>
+            <a href="https://http://volo.gopher-eye.com/" target="_blank"
+              class="external-link button is-normal is-rounded is-dark is-outlined">
+              <span>Running Model</span>
             </a>
           </span>
           <span class="link-block">
-            <a
-              href="https://github.com/padpy/VoloLLM"
-              target="_blank"
-              class="external-link button is-normal is-rounded is-dark is-outlined"
-            >
-            <span>Code</span>
+            <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark is-outlined">
+              <span>Final Report</span>
             </a>
-          </span>      
+          </span>
           <span class="link-block">
+            <a href="https://github.com/padpy/VoloLLM" target="_blank"
+              class="external-link button is-normal is-rounded is-dark is-outlined">
+              <span>Code</span>
+            </a>
+          </span>
+          <!-- <span class="link-block">
             <a
               href=""
               target="_blank"
@@ -107,395 +102,806 @@
             >
             <span>Model Weights</span>
             </a>
-          </span>              
+          </span>               -->
         </div>
       </div>
 
 
     </div>
   </div>
-
+  <div id="toc-wrapper" style="border: 1px solid #ccc; padding: 15px; margin-top: 32px; margin-left: 20%;margin-right: 20%; border-radius: 8px; background-color: #f0f0f0;">
+    <!-- Title Box -->
+    <div style="background-color: #a1a1a1; padding: 10px; border-radius: 6px;">
+      <h1 style="text-align: left; margin: 0; color: #fff; font-size: 1.5em; font-weight: bold;">Table of Contents</h1>
+    </div>
+  
+    <!-- Navigation Content -->
+    <nav id="outline" style="text-align: left; margin-top: 15px; margin-left: 0%;">
+      <ul style="list-style: none; padding: 0; color: #888;">
+        <!-- Links to h1 headers -->
+        <li style="margin: 10px 0;">
+          <a href="#abstract" style="text-decoration: none; color: #888;">Abstract</a>
+        </li>
+        <li style="margin: 10px 0;">
+          <a href="#Introduction" style="text-decoration: none; color: #888;">Introduction</a>
+        </li>
+        <ul style="list-style: none; padding-left: 20px;">
+          <!-- Links to h2 headers within Introduction -->
+          <li style="margin: 10px 0;">
+            <a href="#Background" style="text-decoration: none; color: #888;">Background</a>
+          </li>
+          <li style="margin: 10px 0;">
+            <a href="#target-audience-impact" style="text-decoration: none; color: #888;">Target Audience</a>
+          </li>
+          <li style="margin: 10px 0;">
+            <a href="#outside-impact" style="text-decoration: none; color: #888;">Outside Impacts</a>
+          </li>
+        </ul>
+        <li style="margin: 10px 0;">
+          <a href="#approach" style="text-decoration: none; color: #888;">Approach</a>
+        </li>
+        <ul style="list-style: none; padding-left: 20px;">
+          <li style="margin: 10px 0;">
+            <a href="#anticipated-challenges" style="text-decoration: none; color: #888;">Anticipated Challenges</a>
+          </li>
+          <li style="margin: 10px 0;">
+            <a href="#challenges-encountered" style="text-decoration: none; color: #888;">Challenges Encountered</a>
+          </li>
+        </ul>
+        <li style="margin: 10px 0;">
+          <a href="#results" style="text-decoration: none; color: #888;">Results</a>
+        </li>
+        <li style="margin: 10px 0;">
+          <a href="#conclusion" style="text-decoration: none; color: #888;">Conclusion</a>
+        </li>
+        <ul style="list-style: none; padding-left: 20px;">
+          <li style="margin: 10px 0;">
+            <a href="#future-work" style="text-decoration: none; color: #888;">Future Work</a>
+          </li>
+          <li style="margin: 10px 0;">
+            <a href="#ethical-concerns" style="text-decoration: none; color: #888;">Ethical Concerns</a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+  </div>
+  
+  
+  
   <div class="wrapper">
-    <hr>
-    
-    <h2 id="Introduction">Introduction</h2>
 
-<p>Dungeons & Dragons (D&D), a popular tabletop role-playing game, engages players in dynamic narratives created by a dungeon master (DM). In this game, the DM controls the game's story, managing both player interactions and the progression of pre-designed campaign modules. DM work can get extremely tedious as they deal with complex intertwined storylines, setting and character consistency, and crafting engaging gameplay. Additionally, the accessibility of the game depends on the availability of skilled DMs, which limits the experience for many potential players.
-  </p>
-  <p>
-  This project seeks to address these challenges by creating a Dungeon Master Agent powered by Large Language Models (LLMs) to automate narrative generation, to main story progression, and to adapt to player inputs in real time.
-  </p>
-  <section id="existing-models">
-    <h2>Existing Models</h2>
-    <p>There has been previous research done on the types of models that have been created for similar purposes. Many focused on one component, but our findings have shown that a mixture of the following can be beneficial.</p>
-    <article id="llm-fine-tuning">
-      <h3>Fine-tuned LLMs</h3>
-      <p>
-        Research demonstrates the ability of fine-tuned LLMs to manage D&D combat mechanics as well as styling the messages to be more appropriate to the siutation. 
-        However, this approach does not address narrative coherence or story progression and our findings found that fine-tuning has hurt the DM's responses in terms of understandability.
+    <h1 id="abstract">Abstract</h1>
+
+    <p>VoloLLM is a Dungeon and Dragons dungeon
+      master chatbot. It is designed to ingest Dungeons and Dragons adventure modules as guide a single player through
+      the adventure.</p>
+
+    <div class="wrapper">
+      <hr>
+
+      <h1 id="Introduction">Introduction</h1>
+
+
+      <p>Dungeons & Dragons (D&D) is an open-ended
+        tabletop role-playing game. Players take the role
+        of a single crafted character, while the Dungeon
+        Master (DM) creates a story, following conventions
+        from a campaign book, and will lead the players
+        through it. DM work can get extremely tedious
+        and taxing as they have to deal with complex intertwined storylines, setting and character consistency,
+        and crafting engaging gameplay. While enjoyable,
+        many players can find it challenging to schedule
+        player sessions over multiple weeks, coordinates
+        groups of 4 or more people, and for DMs to prepare
+        thoroughly for each session.
       </p>
-    </article>
-  
-    <article id="rag-techniques">
-      <h3>Retrieval-Augmented Generation (RAG)</h3>
       <p>
-        RAG techniques have been employed to retrieve relevant story elements and maintain contextual relevance. While effective for structured narratives, these methods struggle with the dynamic, player-driven nature of D&D campaigns.
+        Our team aims to develop an application that
+        will take the role of a DM and will guide players
+        through an predefined story, adventure modules,
+        and be able to respond to players’ input and actions
+        while building a cohesive story. Our hopes is to
+        address this issue of potential players not being
+        able to find others who have the time or energy to
+        join them on a session.
       </p>
-    </article>
-    </article>
-  </section>
+      <section id="Background">
+        <h2>Background</h2>
+        <p>There has been previous research done on the types of models that have been created for similar purposes.
+          Many focused on one component, but our findings have shown that a mixture of the following can be beneficial.
+        </p>
+        <article id="llm-fine-tuning">
+          <h3>Fine-tuned LLMs</h3>
+          <p>
+            Fine-tuning has been shown to improve story-
+            telling abilities of an LLM, enhancing the stylistic
+            capabilities and showing writing prowess when
+            given extremely specific prompts and requirements
+            (Gite et al., 2024). Additionally, when utilizing
+            parameter-efficient techniques such as QLoRA, the
+            model does not require a high volume of stories to
+            feed into its training process.
+            Although the quality of the generated stories
+            increase, an ethical issue arises of how to deal with
+            plagiarism and stealing of authors’ works. There
+            have been studies highlighting cases where models
+            have written eerily similar stories to preexisting
+            ones, and unless safeguards are implemented, there
+            is a high risk of real life stories being stolen and
+            published as fully original (Xie et al., 2023).
+            Another downside to fine-tuning is that this technique has not been utilized to improve storytelling
+            consistency and memory.
+          </p>
+        </article>
 
-  <hr>
+        <article id="rag-techniques">
+          <h3>Retrieval-Augmented Generation (RAG)</h3>
+          <p>
+            RAG techniques retrieve relevant story elements
+            and maintain contextual relevance depending on
+            the input by the player. Other researchers have
+            found that by utilizing RAG can enhance plotline
+            consistency and have the ability to incoroporate
+            ’common-sense’ constraints, meaning the LLM has
+            a rationale for every line given (Wen et al., 2023).
+            In the studies found, RAG based LLMs have stories
+            that have been evaluated by human annotators to
+            be the most creative and complex in comparison to
+            other prompting techniques. It also mitigates the
+            problem of plagiarism as it has been found that the generated stories have a zero N-gram overlap with
+            original text.
+            While effective for static or partially structured
+            narratives, these methods struggle with the dynamic, player-driven nature of D&D campaigns.
+          </p>
+        </article>
+        </article>
+      </section>
 
-  <section id="target-audience-impact">
-    <h2>Target Audience and Impact</h2>
-  
-    <article id="dd-players-dms">
-      <h3>D&D Players and DMs</h3>
+      <hr>
+      <section>
+        <h1>Motivation</h1>
+        <p>Our project is the provide guided narrative experience for tabletop role player gamers. There are
+          many new and classic adventure modules that many gamers would love to player.</p>
+      </section>
+
+      <section id="target-audience-impact">
+        <h2>Target Audience</h2>
+        <article id="dd-players-dms">
+          <h3>D&D Players and DMs</h3>
+          <p>
+            Players who wish to engage in immersive D&D campaigns without requiring a human DM, or DMs who would like to
+            use
+            this LLM as an aid to their own campaign.
+          </p>
+        </article>
+
+        <article id="game-developers">
+          <h3>Game Developers</h3>
+          <p>
+            Any game developers who
+            would like to potentially use this as a baseline to
+            train narrators within their own game could potentially use this in their work.
+          </p>
+        </article>
+      </section>
+
+      <hr>
+      <section id="outside-impact">
+        <h2>Outside Impacts</h2>
+
+        <article id="accessibility">
+          <h3>Enhanced Accessibility</h3>
+          <p>Removes the dependency on human DMs, making tabletop RPGs more
+            accessible to new players and underrepresented communities.
+          </p>
+        </article>
+
+        <article id="scalable-narratives">
+          <h3>Scalable Narratives</h3>
+          <p>Allows larger-scale campaigns and group interactions to occur without
+            extra resources needed.
+          </p>
+        </article>
+        <article id="related-fields">
+          <h3>Related Fields</h3>
+          <p> Offers foundation for other storyline-driven projects to use AI as a
+            supporting narrator, such as game developers and authors.
+          </p>
+        </article>
+      </section>
+
+      <hr>
+      <section id="approach">
+        <h1>Approach</h1>
+        <p>For our project we created an end-to-end DM system called VoloLLM. This system is able to ingest
+          a Dugneons and Dragons PDF adventure module
+          and create a database and populate the contents of
+          a progression system. It after responding with a
+          hard coded introduction to the campaign players
+          type their response the the first prompt and the system generates a reply that furthers the story. </p>
+        <!-- <p>The image below contains a diagram of the pipelines and the flow of how VoloLLM works. When the model is
+          booted, a given campaign, in this example Deepwater, has its text extracted and chunked into separate
+          documents containing information on
+          the module. ChatGPT-o1 then generates a set number of events for the specific campaign, thus creating a story
+          outline for the 'session'.
+        </p>
+        <p>
+          An initial prompt is given to the player to lead them through the story. Throughout the session, as the player
+          input their actions, a RAG system pulls information on any previously done events (any unique events done by
+          the player), as well as
+          information on their current event, provided by the story outline on the campaign.
+        </p>
+        <p>
+          After every n-turns a player takes (messages back to the LLM), the model auto-checks with the story outline to
+          evaluate if the player has progressed enough to 'complete' the current event. If deemed 'complete', the model
+          will transition
+          into the next event in the story outline. Otherwise, the player will stay in the same event until they have
+          made enough progress.
+        </p>
+        <p>
+          Additionally, the model will generate a summary of the last n-turns, and store it in an in-memory database for
+          future use to ensure that there is consistency to the story.
+        </p> -->
+        <p>More details about each of the implementations are provided below.</p>
+        <p class="sys-img"><img src="./files/pipeline.jpg" alt="imgname"></p>
+        <article id="campaign-preprocessing">
+          <h3>Campaign Preprocessing</h3>
+          <p>
+            Although we could create a system that is creates narratives entirely improvisationally, there is a
+            wealth of existing official and unofficial prewritten
+            adventures that players may want to play. Because
+            of this we need of a way for out system to ingest
+            these stories and automatically process Dungeons
+            and Dragon adventure module.
+          </p>
+        </article>
+
+        <article id="story-progress-tracking">
+          <h3>Story Progress Tracking</h3>
+          <p>
+            After a certain window of responses has passed (currently set to 5), the LLM evaluates whether the current
+            scenario has been resolved or not. If the criteria are satisfied, the system transitions players to the next
+            scenario. This progress tracking mechanism minimizes the risk of narrative stagnation or divergence from the
+            campaign's core storyline. This feature is useful to avoid divergence from the campaign, allowing players to
+            encounter all vital storylines.
+          </p>
+        </article>
+
+        <article id="action-summarizer">
+          <h3>Action Summarization & Database</h3>
+          <p>
+            In a Dungeons and Dragons campaign, the impact of player choices on the story is essential for immersion and
+            enjoyment. To
+            an Action Database tracks player decisions using text summarization of a rolling chat history. Every three
+            turns (each
+            consisting of one human message and one AI response), the system summarizes the most recent five-turn window
+            to extract
+            key events. These events are stored in a Hugging Face in-memory vector store for future retrieval. This
+            approach
+            balances coherence and context, with the five-turn window providing sufficient detail for smaller models
+            while avoiding
+            repetition or loss of flow. Overlapping summaries ensure continuity and accurate representation of player
+            actions.
+          </p>
+        </article>
+
+        <article id="rag">
+          <h3>Retrieval Augmented Generation</h3>
+          <p>VoloLLM utilizes Retrieval-Augmented Generation (RAG) to improve DM
+            responses by integrating contextual information from the campaign database (holds info on world and
+            setting), and the event database (actions and scenarios that have happened). Using
+            Hugging Face's InMemoryVectorStore and BERT (bert-base-uncased) for vector embeddings, the RAG provides
+            context and relevant information into every prompt.
+            This allows for more contextual clues and information on generated responses, aiding with story consistency.
+          </p>
+        </article>
+      </section>
+      <hr>
+      <section id="anticipated-challenges">
+        <h2>Anticipated Challenges</h2>
+        <p>Our team anticipated that there will be issues with stylization and memory. Throughout our research, we saw little
+          documentation on utilizing multiple methods to train a model to be specialized in this type of storytelling.
+          Especially when trying to handle a game as open-ended as D&D, there are limitless options to be taken and the model
+          has to keep track to ensure that each event is accounted for, the response will make thematic sense, and has to be in
+          the right tone. There's a lot of factors at hand and finding a way to manage them all was the point of this project.
+        </p>
+      </section>
+      <section id="challenges-encountered">
+        <h2>Challenges Encountered</h2>
+        <p>There were a number of challenges that we encountered during the project. Firstly, we intended to fine-tune the model to improve the style
+        and format of the responses. We initially planned to do this using transcripts from a a Dungeons and Dragons podcast, but
+        we found the model seem to overfit to the dataset and would often respond with mannerisms of the podcast's DM, and
+        include characters from the responses. We explored using synthetic data generated using ChatGPT, however, because of the
+        large response sizes needed to emulated the chat history and other contextual information, the cost was prohibitively
+        expensive.</p>
+        
+        <p>We finally found that improved prompt construction using techniques learned through the course of the semester instead
+        greatly improve response quality and consistency. Additionally, for the local models techniques such as automatic chain
+        of thought prompting and few-shot prompting improve greatly improved the detail of response and output format.</p>
+        
+        
+        <p>The most persistent issue experience throughout the project was generation of consistent output formats. Because so many
+        systems rely on LLMs to generate story progress status of event summaries, the system is vulnerable to issues of prompt
+        structure leaking into the generate response when it is parse from the full LLM response. For instance if the "CHAT
+        HISTORY" heading string leaks through the LLM response, then it is can end up in chat history or action history. This
+        can then lead to the string appearing event more frequently and leading to all further responses to be ill-formatted and
+        difficult for a human to read. </p>
+        
+        <p>Response formatting issues are most prevalent on local models, but also occur with ChatGPT models with less frequency.
+        The addition of output formatting and parsing with LangChain, the issue still persisted.</p>
+        <!-- 
+        <article id="following-the-campaign">
+          <h3>Following the Campaign</h3>
+          <p>
+            One of our team’s first models struggled to align generated storylines with the campaign module, often
+            introducing off-topic elements or failing to transition scenarios appropriately.
+            By implementing storyline extraction and story progress tracking, the model was less likely to generate
+            off-topic responses.
+          </p>
+        </article>
+
+        <article id="repetitive-responses">
+          <h3>Repetitive Responses</h3>
+          <p>
+            Local LLMs exhibited a tendency to repeat phrases during decoding, particularly in complex scenarios.
+            Reducing the context window and temperature adjustments were performed to avoid this loop.
+          </p>
+        </article>
+
+        <article id="resolution-flexibility">
+          <h3>Resolution Flexibility</h3>
+          <p>
+            The system sometimes applied resolution criteria too rigidly, overlooking creative player solutions that
+            diverged from predefined criteria.
+            A feedback loop is being designed to address this limitation.
+          </p>
+        </article>
+
+        <article id="irrelevant-context-retrieval">
+          <h3>Irrelevant Context Retrieval</h3>
+          <p>
+            As there is a RAG system in place that pulls session unique events for the current player, this causes an
+            issue.
+            The model occasionally pulls data from this database that is irrelevant to the current event at hand,
+            causing a disconnect between the player and the campaign story.
+          </p>
+        </article> -->
+      </section>
+
+
+
+      <!-- <h3 id="the-timeline-and-the-highlights"></h3> -->
+
+      <hr>
+
+      <h1 id="results">Results</h1>
+      <h2>Player Satisfaction Survey Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>Category</strong></th>
+            <th style="text-align: center"><strong>Average Score</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">Narratives</td>
+            <td style="text-align: center">5.37</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; text-decoration: underline;">Player Engrossment</td>
+            <td style="text-align: center; text-decoration: underline;">4.27</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Enjoyment</td>
+            <td style="text-align: center">5.57</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: bold;">Creative Freedom</td>
+            <td style="text-align: center; font-weight: bold;">5.63</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Personal Gratification</td>
+            <td style="text-align: center">4.8</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Social Connectivity</td>
+            <td style="text-align: center">5.37</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Textual Aesthetics</td>
+            <td style="text-align: center">5.17</td>
+          </tr>
+        </tbody>
+      </table><p>In total 15 players, including the 3 researchers, played VoloLLM chatbot with the OpenAI LLM backend. From player
+        responses, all categories of player satisfaction rated neutral or above. The two highest rated categories of
+        satisfaction were Creative Freedom and Enjoyment. Players reported surprise at how capable the chatbot
+        was at addressing their character choices. They felt that they are free to choose their own path through the story and
+        the chatbot would smoothly accommodated almost any choice while incorporating choice details.</p>
+      
+        <p>The two lowest categories of satisfaction are Player Engrossment and Personal Gratification. Some of the
+        most cited complaints by players was the lack of challenge in the story. Player sited that the bot was too compliant
+        to the point of taking away for story enjoyment. During one anecdote a user was able to use sci-fi weapons to defeat
+        their enemies, or in an other instance the user stopped performing the quest and instead went to go get burgers. The
+        lack of challenge and constraint makes player feel unchallenged and unsatisfied.</p>
+      
+        <p>Additionally, the chatbot responds with relatively large blocks of text reaching 256 characters in length. Users that
+        do not report enjoying reading, reported that the text-based nature of the game made the experience less enjoyable.
+        This may be why in the table above, we see the greatest degree of standard deviation in both
+        questions regarding Player Engrossment and Question 6 which asks about player boredom.</p>
+          <hr>
+      <h2>Model Satisfaction Survey Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>Category</strong></th>
+            <th style="text-align: center"><strong>Q</strong></th>
+            <th style="text-align: center"><strong>GPT 4o</strong></th>
+            <th style="text-align: center"><strong>Qwen 14B</strong></th>
+            <th style="text-align: center"><strong>Qwen 7B</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" style="text-align: center">Narrative</td>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center"><strong>6.33</strong></td>
+            <td style="text-align: center">5.33</td>
+            <td style="text-align: center">5</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">2</td>
+            <td style="text-align: center"><strong>5.67</strong></td>
+            <td style="text-align: center">5.33</td>
+            <td style="text-align: center"><strong>5.67</strong></td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="text-align: center">Player Engrossment</td>
+            <td style="text-align: center">3</td>
+            <td style="text-align: center"><strong>5</strong></td>
+            <td style="text-align: center">3</td>
+            <td style="text-align: center">3</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">4</td>
+            <td style="text-align: center"><strong>4.3</strong></td>
+            <td style="text-align: center">4</td>
+            <td style="text-align: center">2.33</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="text-align: center">Enjoyment</td>
+            <td style="text-align: center">5</td>
+            <td style="text-align: center"><strong>5.33</strong></td>
+            <td style="text-align: center">5</td>
+            <td style="text-align: center">5</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">6*</td>
+            <td style="text-align: center">4.33</td>
+            <td style="text-align: center"><strong>4</strong></td>
+            <td style="text-align: center"><strong>4</strong></td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="text-align: center">Creative Freedom</td>
+            <td style="text-align: center">7</td>
+            <td style="text-align: center">5</td>
+            <td style="text-align: center"><strong>6.33</strong></td>
+            <td style="text-align: center">6</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">8</td>
+            <td style="text-align: center">6</td>
+            <td style="text-align: center"><strong>6.3</strong></td>
+            <td style="text-align: center">6</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">Personal Gratification</td>
+            <td style="text-align: center">9</td>
+            <td style="text-align: center"><strong>5</strong></td>
+            <td style="text-align: center">4</td>
+            <td style="text-align: center">4.33</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="text-align: center">Social Connectivity</td>
+            <td style="text-align: center">10</td>
+            <td style="text-align: center"><strong>5.67</strong></td>
+            <td style="text-align: center">4.33</td>
+            <td style="text-align: center">5</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">11</td>
+            <td style="text-align: center"><strong>6.33</strong></td>
+            <td style="text-align: center">3.67</td>
+            <td style="text-align: center">3.33</td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="text-align: center">Textual Aesthetics</td>
+            <td style="text-align: center">12</td>
+            <td style="text-align: center"><strong>6</strong></td>
+            <td style="text-align: center">3</td>
+            <td style="text-align: center">2.33</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">13</td>
+            <td style="text-align: center"><strong>6.33</strong></td>
+            <td style="text-align: center">3.67</td>
+            <td style="text-align: center">3.33</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>When comparing the quality of play between the locally run models, Qwen 2.5 7B \& 14B, and the OpenAI the clear winner
+      is OpenAI. It is the only model that performed above neutral for all categories of satisfaction, as seen above, and satisfaction questions, except for Question 6 where it was reported as being
+      more. The one area where the Qwen models are reported beating ChatGPT 4o in our evaluation is CreativeFreedom.
+      From our experience, the model tends to more directly address actions the player takes, and with shorter responses.</p>
+
+      <hr>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>Event Number</strong></th>
+            <th style="text-align: center"><strong>Cosine Similarity Score</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center">0.7085</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">2</td>
+            <td style="text-align: center">0.7827</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">3</td>
+            <td style="text-align: center">0.8199</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">4</td>
+            <td style="text-align: center">0.8671</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">5</td>
+            <td style="text-align: center">0.7684</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">6</td>
+            <td style="text-align: center">0.6830</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">7</td>
+            <td style="text-align: center">0.7094</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">8</td>
+            <td style="text-align: center">0.7696</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">9</td>
+            <td style="text-align: center">0.8385</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">10</td>
+            <td style="text-align: center">0.5850</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">11</td>
+            <td style="text-align: center">0.7141</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">12</td>
+            <td style="text-align: center">0.7140</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">13</td>
+            <td style="text-align: center">0.6932</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">14</td>
+            <td style="text-align: center">0.7117</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">15</td>
+            <td style="text-align: center">0.5767</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">16</td>
+            <td style="text-align: center">0.8566</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">17</td>
+            <td style="text-align: center">0.7776</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">18</td>
+            <td style="text-align: center">0.7686</td>
+          </tr>
+        </tbody>
+        <caption>
+          Cosine Similarity Scores between the generated events and the corresponding passage in the module "Deepwater -
+          Dragon Heist" using 'all-mpnet-base-v2' sentence transformer.
+        </caption>
+      </table>
+
+      <p>From our results, our team found that all of the event descriptions ranged from a moderate to high score (0.57
+        to
+        0.86), indicating high similarity to the original campaign module. This is what our team was aiming for as the
+        closer
+        the generated timeline events are to the original text, the higher likelihood that the generated responses using
+        these
+        event contexts will be accurate as well.</p>
+      <!-- <p>
+        We can see that the base Qwen model does seem to pick up the chat syntax from the chat history, however, this
+        means that responses
+        are long sequences of chat history, when we expect a single response from the dungeon masters perscpective.
+        After finetuning, we see
+        that the model more accurately generates a response. The first column also shows the best Qwen + FT results,
+        with the model giving
+        a realistic response to the question regarding finding fruit in the market. However, with the other two
+        responses the model performs
+        much more poorly. This is likely due the small amount of meaningful information in the chat history. We plan to
+        address this by
+        standardising the chat history information by providing a consistent number of tokens in the history. We will do
+        this by approximating
+        the number of tokens based on number of non-white space characters in the chat history, setting a lower bound
+        for token counts, and
+        including chats until this threshold is reached.
+      </p>
+
       <p>
-        Players who wish to engage in immersive D&D campaigns without requiring a human DM or even DMs who would like to use this LLM as an aid to their own campaign.
+        If we look at Table 2, we see automatic evaluation results from the Qwen 2.5 model, Qwen 2.5 + finetuned on 4000
+        samples, and
+        Qwen 2.5 finetuned on 58524 samples. The results are metrics comparing the generate output given 250 randomly
+        selected dialog
+        samples from test. We can see that from the base model to the final model finetuned over the entire dataset,
+        58524 samples, that
+        the model begins to use more 2-grams that are in the test set, and the Bert Score increases suggesting that the
+        semantic content
+        is more similar. It is unclear why the Qwen model trained on 4000 samples performs more poorly, but it may have
+        to do with the
+        model learning intermediate representations that is capturing the chat syntax, but not the content. The base
+        Qwen may be
+        "copy" text from the chat history, that may artificially inflate the Rouge scores.
       </p>
-    </article>
-  
-    <article id="game-developers">
-      <h3>Game Developers</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>Metrics</strong></th>
+            <th style="text-align: center">Bert Score (F1)</th>
+            <th style="text-align: center">Rouge 1</th>
+            <th style="text-align: center">Rouge 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center"><strong>Qwen 2.5 7B</strong></td>
+            <td style="text-align: center">0.8393</td>
+            <td style="text-align: center">0.0904</td>
+            <td style="text-align: center">0.0023</td>
+          <tr>
+            <td style="text-align: center"><strong>Qwen 2.5 7B + FT (4000 Samples Trained)</strong></td>
+            <td style="text-align: center">0.8386</td>
+            <td style="text-align: center">0.0211</td>
+            <td style="text-align: center">0.0052</td>
+          </tr>
+          <tr>
+            <td style="text-align: center"><strong>Qwen 2.5 7B + FT (58524 Samples Trained)</strong></td>
+            <td style="text-align: center">0.8484</td>
+            <td style="text-align: center">0.0950</td>
+            <td style="text-align: center">0.0048</td>
+
+          </tr>
+        </tbody>
+        <caption>Table 2. Automated Evaluation metrics on 250 random samples from the test CRD3 set</caption>
+      </table> -->
+
+      <br>
+      <!-- <p>
+        From here we can see that the Qwen 2.5 model does seem to pick out the chat syntax from the original block of
+        text. However, we want a single response from the DM.
+        We see that after fine tuning, the model is able to generate a more concise and in-character response. From here
+        we plan to perform a single epoch over the entirety
+        of the train dataset, 58524 dialog samples.
+      </p> -->
+
+      <hr>
+
+
+
+      <h1 id="conclusion">Conclusion</h1>
+      <h2>Replicability</h2>
+      <p>Our research result are focused largely on the psychometric analysis of 15 players that are playing
+        VoloLLM for brief periods of time, 15 to 60 minutes. Players were selected from among family and
+        friends of the authors of this report. Given the small
+        sample size and flawed methodology for gathering
+        impartial participants it is likely that future research
+        based on this work may find significantly different
+        results. This is all to say that we do not claim
+        that our results are statistically significant or robust.
+        However, we defend our method of sampling citing
+        the scope of the course project and financial cost
+        contacting significant number of participants from
+        relevant communities, such as the tabletop gaming
+        community, and API costs associated with running
+        these trials.</p>
+
+      <p>If someone did want to run trials to
+        replicate our findings, all source code is
+        currently phallically available on Github:
+        https://github.com/padpy/VoloLLM. The only
+        additional materials need to run the code is an
+        OpenAI API key, for access to the paid API. A copy of the survey is found in our given report.</p>
       <p>
-        Any game developers who would like to potentially use this as a baseline to train narrators within their own game could potentially use this in their own work.
-      </p>
-    </article>
-  </section>
-  
-<hr>
-<section id="implementation">
-  <h2>Implementation</h2>
-  <p>The image below contains a diagram of the pipelines and the flow of how VoloLLM works. When the model is booted, a given campaign, in this example Deepwater, has its text extracted and chunked into separate documents containing information on 
-    the module. ChatGPT-o1 then generates a set number of events for the specific campaign, thus creating a story outline for the 'session'.
-  </p>
-  <p>
-    An initial prompt is given to the player to lead them through the story. Throughout the session, as the player input their actions, a RAG system pulls information on any previously done events (any unique events done by the player), as well as
-    information on their current event, provided by the story outline on the campaign.
-  </p>
-  <p>
-    After every n-turns a player takes (messages back to the LLM), the model auto-checks with the story outline to evaluate if the player has progressed enough to 'complete' the current event. If deemed 'complete', the model will transition
-    into the next event in the story outline. Otherwise, the player will stay in the same event until they have made enough progress.
-  </p>
-  <p>
-    Additionally, the model will generate a summary of the last n-turns, and store it in an in-memory database for future use to ensure that there is consistency to the story.
-  </p>
-  <p>More details about each of the implementations are provided below.</p>
-  <p class="sys-img"><img src="./files/pipeline.jpg" alt="imgname"></p>
-  <article id="story-outline-extraction">
-    <h3>Story Outline Extraction</h3>
-    <p>
-      Every D&D campaign module contains predefined story arcs and scenarios. Using ChatGPT-4o (fine-tuned for story extraction), 
-      we parse the campaign's first chapter into discrete scenarios.
-      For each scenario, we define resolution criteria—specific conditions or events required for players to progress to the next scenario.
-      This process ensures that the campaign module's intent is preserved while allowing flexibility for player-driven narratives.
-    </p>
-  </article>
+      <section id="future-work">
+        <h2>Future Work</h2>
 
-  <article id="story-progress-tracking">
-    <h3>Story Progress Tracking</h3>
-    <p>
-      After a certain window of responses has passed (currently set to 5), the LLM evaluates whether the current scenario has been resolved or not. If the criteria are satisfied, the system transitions players to the next scenario. This progress tracking mechanism minimizes the risk of narrative stagnation or divergence from the campaign's core storyline. This feature is useful to avoid divergence from the campaign, allowing players to encounter all vital storylines.
-    </p>
-  </article>
+        <article id="stylization">
+          <h3>Stylization</h3>
+          <p>
+            There is room for improvement in the stylization of the LLM’s responses, as they may read off as bland and
+            boring, which can hurt the users’ experience.
+          </p>
+        </article>
 
-  <article id="campaign-database">
-    <h3>Campaign Database</h3>
-    <p>
-      The campaign module is segmented into overlapping chunks of 1000 characters with a 200-character overlap.
-      These chunks are stored as documents in an in-memory database for efficient retrieval during gameplay.
-      Context retrieval ensures that the LLM has access to relevant information about the ongoing scenario and ensures adherence to the given campaign.
-    </p>
-  </article>
+        <article id="survey-more-players">
+          <h3>Survey More Players</h3>
+          <p>
+            Using our modified Guess-18 questionnaire, future work should interview many more players to identify areas
+            of weakness within the gameplay loop.
+          </p>
+        </article>
 
-  <article id="story-event-tracking">
-    <h3>Story Event Tracking</h3>
-    <p>
-      Depending on the players’ actions, unique outcomes and events will occur.
-      To ensure that each of the players’ actions are accounted for and not swept under the rug, our team introduced an event summation task 
-      where the LLM summarizes key events in the chat history.
-      These summaries are stored in another Retrieval-Augmented Generation (RAG) database, which is maintained throughout the player’s session.
-    </p>
-  </article>
-</section>
-<hr>
-<section id="challenges-encountered">
-  <h2>Challenges Encountered</h2>
+        <article id="optimizing-system-performance">
+          <h3>Optimizing System Performance</h3>
+          <p>
+            Research should be done to evaluate the efficacy of RAG-based systems and whether the database should be
+            stored in one structure vs. another.
+          </p>
+        </article>
 
-  <article id="following-the-campaign">
-    <h3>Following the Campaign</h3>
-    <p>
-      One of our team’s first models struggled to align generated storylines with the campaign module, often introducing off-topic elements or failing to transition scenarios appropriately.
-      By implementing storyline extraction and story progress tracking, the model was less likely to generate off-topic responses.
-    </p>
-  </article>
+        <article id="introducing-new-campaigns">
+          <h3>Introducing New Campaigns</h3>
+          <p>
+            More campaigns should be introduced and run through by the model to ensure our team has not just been
+            focusing on optimizing for a single campaign.
+          </p>
+        </article>
+      </section>
+      <hr>
+      <h2>Ethical Concerns</h2>
+      <p>The main concern around our application is the generation of sensitive or immoral content. We do not implement any
+        user safety mechanisms that protect users from inappropriate generated content, and solely rely on safety trained in
+        the model or mechanisms implented through OpenAIs API. Our application is sensitive to injection techniques and
+        jailbreaking. One common method for jailbreaking LLMs is to ask them to speak from another entity, bypassing their
+        built-in safety rules. Our application is already asking the AI model to roleplay be default, making it more prone to
+        produce otherwise prohibited contents, even through OpenAI's API. </p>
 
-  <article id="repetitive-responses">
-    <h3>Repetitive Responses</h3>
-    <p>
-      Local LLMs exhibited a tendency to repeat phrases during decoding, particularly in complex scenarios.
-      Reducing the context window and temperature adjustments were performed to avoid this loop.
-    </p>
-  </article>
+        <p>In play testing there were several incidents that ovvured that typically would not be allowed through through the
+          OpenAI API. Firstly, we were able to generate suggestive content during romance attempts between player characters and
+          non-player characters. Secondly, we were about to prompt the LLM is such a way that is described graphic acts of
+          violence towards humans and animals. This typically is not allowed by OpenAI, but in the course a play testing it
+          freely generate this content. We can already see that, the model is prone to bypassing safety restrictions placed on
+          the model by OpenAI.</p>
 
-  <article id="resolution-flexibility">
-    <h3>Resolution Flexibility</h3>
-    <p>
-      The system sometimes applied resolution criteria too rigidly, overlooking creative player solutions that diverged from predefined criteria.
-      A feedback loop is being designed to address this limitation.
-    </p>
-  </article>
+          <p>Currently, we as the developers have access to the chat logs and data of all chats sent through VoloLLM for
+            purposeful analysis. This may violate the privacy concerns of some users, especially when expecting a private session,
+            as they want their chats to remain anonymous and inaccessible to other individuals. While we explicitly made this fact
+            clear in this iteration, through a user-informed consent protocol, future interactions should also keep this ethical
+            concern in mind and take further precautions in accessing and using this data. </p>
 
-  <article id="irrelevant-context-retrieval">
-    <h3>Irrelevant Context Retrieval</h3>
-    <p>
-      As there is a RAG system in place that pulls session unique events for the current player, this causes an issue.
-      The model occasionally pulls data from this database that is irrelevant to the current event at hand, causing a disconnect between the player and the campaign story.
-    </p>
-  </article>
-</section>
-
-
-
-<h3 id="the-timeline-and-the-highlights"></h3>
-
-<hr>
-
-<h2 id="results">Results</h2>
-<p>
-<b>How did you measure success? What experiments were used? What were the results, both quantitative and qualitative? Did you succeed? Did you fail? Why?</b>
-</p>
-<p>
-  We have only begun to collect preliminary results. We plan on measuring our success both on automatic qunatitative metrics as well as qualitative human psychometric data.
-  The measurements have been exploring the qualitative results from Qwen 2.5. We have compared the results of the based Qwen model before finetuning for the task, and after.
-  We finetuned Qwen 2.5 on 4000 samples of dialo, with a history length of 10 utterances. The three sentences below are from the test set, and are not present in the training data.
-  
-</p>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Experiment</strong></th>
-      <th style="text-align: center">1</th>
-      <th style="text-align: center">2</th>
-      <th style="text-align: center">3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><strong>Last to sentences in chat history.</strong></td>
-      <td style="text-align: center">['TRAVIS']: Wait, what if there's a market, like an open 
-				farmer's market we could get some spice?</br>['LAURA']: Yeah. As we 
-				look around, do we see any markets? Actually, the shopping district would be 
-				a wonderful place to look for--</br>['MARISHA']: Is that in the Suncut 
-				Bazaar, or could we head that direction while we look?</br>['SAM']: Oi! 
-				Oi, you there, boy! (laughter)</br>['DM']: As you glance over, you see 
-				walking down the street what appears to be two teenage boys, huddled 
-				together, wearing drab, ankle-length cloth robes. One of them has a purple 
-				shawl over their shoulders. The other has a hood up, and they're both 
-				carrying small satchels of fruit in their arms. They both stop and turn. 
-				They look curiously at the small gnome, the small, pale gnome in foreign 
-				clothes and adorned, beautiful armor that walks up to them in the 
-				street.</br>['SAM']: That looks like fine fruit. Where would you go to 
-				go shopping for things here, market-y things?", '</br>['DM']: (muttered 
-				conversation) "You are a very small man."', "</br>['SAM']: I've heard 
-				that. It's a glandular condition. (laughter)", '</br>['DM']: "I'm 
-				sorry to hear that."', "</br>['SAM']: Yes. My cross to bear. I've seen 
-				many medicine men about it, but they can't cure it, but many have 
-				recommended that I get a diet of vegetables and fruit. Where could I buy 
-				some, just like the kind that you have?</td>
-      <td style="text-align: center">['TALIESIN']: I'm going to yell to the back, open the tent 
-				wide! And I'm going to pull-- how far away am I?</br>['DM']: You're 
-				right there. You're in the middle of the crowd as it's swarming around you 
-				and Yasha.</br>['TALIESIN']: (sighs) I'm going to run around and see if 
-				I can flank that creature, if I can move towards flanking that creature with 
-				the other two.</br>['DM']: You can't really flank it, but you can get 
-				next to it.</br>['TALIESIN']: All right. Can I get close enough to take 
-				a shot?</br>['DM']: You can, yeah.</br>['TRAVIS']: Take a shot?", 
-				"</br>['SAM']: You have guns?</br>['TALIESIN']: Well, old habit. 
-				(laughter)</br>['TALIESIN']: As a bonus, I'm flipping it out, and I'm 
-				going to activate the first sword.</td>
-      <td style="text-align: center">['LIAM']: On our own?</br>['DM']: Hmm?", 
-				"</br>['LIAM']: We are all on our own here right?</br>['DM']: You're all 
-				alone.</br>['TRAVIS']: Caleb?</br>['LIAM']: Ja?</br>['TRAVIS']: 
-				You want to do your--? Read my mind.</br>['LIAM']: (poof poof)", 
-				"</br>['MARISHA']: I bring out and put on the goggles.</br>['LIAM']: I let 
-				two of the globules hover around the front of each boat. One at the front 
-				and one at the back of each boat.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><strong>GT Response</strong></td>
-      <td style="text-align: center">This fruit is actually very difficult to find and come 
-        across. If you wish, you could purchase this batch.</td>
-      <td style="text-align: center">Okay, so you watch as Molly pulls the scimitar out, and as he 
-        unsheathes it, draws it across the side of his exposed chest, causing a 
-        little bit of blood to spill out, and as it does, he pulls the blade out, 
-        and you watch as the edge, suddenly, ice crystals begin to build on the 
-        outside of the blade.</td>
-      <td style="text-align: center">All right, so as the orbs</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><strong>Qwen 2.5</strong></td>
-      <td style="text-align: center">Human being in control</br>
-        Human: 1) I have no idea where to go</br>
-        2) I'm trying to make the best for the future</br>
-        3) I'm not trying to do anything bad</br>
-        4) I'm not trying to hurt anyone</br>
-        5) I need help, please respond</br>
-        </br>
-        Assistant: 1) I have no idea where to go.</br>
-        </br>
-        Human: 1) I have no idea where to go</br>
-        2) I'm trying to make the best for the future</br>
-        3) I'm not trying to do anything bad</br>
-        4) I'm not trying to hurt anyone</br>
-        5) I need help, please')</td>
-      <td style="text-align: center">Here is the updated conversation with the DM's 
-				response:</br>
-				['TALIESIN']: I'm going to yell to the back, open the tent wide! And I'm 
-				going to pull-- how far away am I?</br>
-				['DM']: You're right there. you're in the middle of the crowd as it's 
-				swarming around you and Yasha.</br>
-				['TALIESIN']: (sighs) i'm going to run around and see if i can flank that 
-				creature, if i can move towards flanking that creature with the other two.</br>
-				['DM']: you can't really flank it, but you can get next to it"</td>
-      <td style="text-align: center">Human: ['DM']: And I'm sure the goblins are also 
-				keeping their distance...</br>
-				</br>
-				Assistant: ['DM']: So, Liam, it seems like you and Travis are working 
-				together to read Marisha's mind, despite the strange circumstances 
-				surrounding you. Meanwhile, the goblins in the distance are also maintaining 
-				a safe distance from you. It's a surreal scenario, to say the least. Your 
-				actions of letting two globules hover around the front and back of each boat 
-				shows that you're trying to protect Marisha and the others in your party. 
-				It's a risky move, but it also demonstrates your intelligence and 
-				resourcefulness in this unique'</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><strong>Qwen 2.5 + FT</strong></td>
-      <td style="text-align: center">In the marketplace, they have a whole area where 
-				there are different merchants, and there might be a food section, and there 
-				may be fruit that you can purchase in bulk, but if you're going to have to 
-				go up and ask, make some haggling gestures. That's just the way of the 
-				market, unfortunately.</td>
-      <td style="text-align: center">If you want to try this at range, you 
-				can.</td>
-      <td style="text-align: center">Humanity to the end.</td>
-    </tr>
-  </tbody>
-  <caption>Table 1. Example of responses by the model</caption>
-</table>
-
-<p>
-  We can see that the base Qwen model does seem to pick up the chat syntax from the chat history, however, this means that responses 
-  are long sequences of chat history, when we expect a single response from the dungeon masters perscpective. After finetuning, we see
-  that the model more accurately generates a response. The first column also shows the best Qwen + FT results, with the model giving
-  a realistic response to the question regarding finding fruit in the market. However, with the other two responses the model performs
-  much more poorly. This is likely due the small amount of meaningful information in the chat history. We plan to address this by
-  standardising the chat history information by providing a consistent number of tokens in the history. We will do this by approximating
-  the number of tokens based on number of non-white space characters in the chat history, setting a lower bound for token counts, and
-  including chats until this threshold is reached.
-</p>
-
-<p>
-  If we look at Table 2, we see automatic evaluation results from the Qwen 2.5 model, Qwen 2.5 + finetuned on 4000 samples, and 
-  Qwen 2.5 finetuned on 58524 samples. The results are metrics comparing the generate output given 250 randomly selected dialog
-  samples from test. We can see that from the base model to the final model finetuned over the entire dataset, 58524 samples, that 
-  the model begins to use more 2-grams that are in the test set, and the Bert Score increases suggesting that the semantic content
-  is more similar. It is unclear why the Qwen model trained on 4000 samples performs more poorly, but it may have to do with the
-  model learning intermediate representations that is capturing the chat syntax, but not the content. The base Qwen may be
-  "copy" text from the chat history, that may artificially inflate the Rouge scores.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Metrics</strong></th>
-      <th style="text-align: center">Bert Score (F1)</th>
-      <th style="text-align: center">Rouge 1</th>
-      <th style="text-align: center">Rouge 2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><strong>Qwen 2.5 7B</strong></td>
-      <td style="text-align: center">0.8393</td>
-      <td style="text-align: center">0.0904</td>
-      <td style="text-align: center">0.0023</td>
-    <tr>
-      <td style="text-align: center"><strong>Qwen 2.5 7B + FT (4000 Samples Trained)</strong></td>
-      <td style="text-align: center">0.8386</td>
-      <td style="text-align: center">0.0211</td>
-      <td style="text-align: center">0.0052</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><strong>Qwen 2.5 7B + FT (58524 Samples Trained)</strong></td>
-      <td style="text-align: center">0.8484</td>
-      <td style="text-align: center">0.0950</td>
-      <td style="text-align: center">0.0048</td>
-
-    </tr>
-  </tbody>
-  <caption>Table 2. Automated Evaluation metrics on 250 random samples from the test CRD3 set</caption>
-</table>
-<br>
-<p>
-  From here we can see that the Qwen 2.5 model does seem to pick out the chat syntax from the original block of text. However, we want a single response from the DM.
-  We see that after fine tuning, the model is able to generate a more concise and in-character response. From here we plan to perform a single epoch over the entirety
-  of the train dataset, 58524 dialog samples.
-</p>
-<br><br>
-
-<hr>
-
-
-
-<h2 id="conclusion">Conclusion and Future Work</h2>
-<p>
-  <section id="future-work">
-    <h2>Future Work</h2>
-  
-    <article id="stylization">
-      <h3>Stylization</h3>
-      <p>
-        There is room for improvement in the stylization of the LLM’s responses, as they may read off as bland and boring, which can hurt the users’ experience.
-      </p>
-    </article>
-  
-    <article id="survey-more-players">
-      <h3>Survey More Players</h3>
-      <p>
-        Using our modified Guess-18 questionnaire, future work should interview many more players to identify areas of weakness within the gameplay loop.
-      </p>
-    </article>
-  
-    <article id="optimizing-system-performance">
-      <h3>Optimizing System Performance</h3>
-      <p>
-        Research should be done to evaluate the efficacy of RAG-based systems and whether the database should be stored in one structure vs. another.
-      </p>
-    </article>
-  
-    <article id="introducing-new-campaigns">
-      <h3>Introducing New Campaigns</h3>
-      <p>
-        More campaigns should be introduced and run through by the model to ensure our team has not just been focusing on optimizing for a single campaign.
-      </p>
-    </article>
-  </section>
-  
-  <!-- How easily are your results able to be reproduced by others?
+      <!-- How easily are your results able to be reproduced by others?
   Did your dataset or annotation affect other people's choice of research or development projects to undertake?
   Does your work have potential harm or risk to our society? What kinds? If so, how can you address them?
   What limitations does your model have? How can you extend your work for future research?</p> -->
 
 
-<hr>
+      <hr>
 
 
-  </div>
-  
+    </div>
 
 
-</body></html>
+
+</body>
+
+</html>
